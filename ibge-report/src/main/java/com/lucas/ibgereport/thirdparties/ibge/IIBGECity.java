@@ -5,6 +5,7 @@ import com.lucas.ibgereport.thirdparties.configurations.FeignConfiguration;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
 import java.util.Collection;
 
 @FeignClient(name = "IIBGECity", url = "https://servicodados.ibge.gov.br", configuration = FeignConfiguration.class)
