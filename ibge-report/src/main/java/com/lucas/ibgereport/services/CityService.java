@@ -9,8 +9,10 @@ import com.lucas.ibgereport.thirdparties.ibge.IIBGECity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.*;
-import java.nio.channels.FileChannel;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
@@ -45,7 +47,8 @@ public class CityService {
         )).collect(Collectors.toCollection(ArrayList<ReportDTO>::new));
     }
 
-    public InputStream getCityByRegionCSV(String abbreviation) throws IOException {
+    ///Build interface for this method in future
+    public ByteArrayOutputStream getCityByRegionCSV(String abbreviation) throws IOException {
         var cities = iibgeCity.getByRegion(abbreviation);
 
         var reportCities = cities.stream().map(c -> new ReportDTO(
@@ -60,11 +63,10 @@ public class CityService {
         schema = schema.withHeader().withColumnSeparator(',');
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-
         ObjectWriter myObjectWriter = mapper.writer(schema);
         myObjectWriter.writeValue(outputStream, reportCities);
-        InputStream fileInputStream = new ByteArrayInputStream(outputStream.toByteArray());
-        return fileInputStream;
+
+        return outputStream;
     }
 
 }

@@ -30,10 +30,9 @@ public class IBGEReportController {
 
     @GetMapping(path = "/cities/csv/{abbreviation}")
     public OutputStream getCityByRegionCsv(HttpServletResponse response, @PathVariable(value = "abbreviation") String abbreviation) throws IOException {
-//        response.setContentType("text/csv");
         response.setHeader("Content-Disposition","attachment; filename=cities.csv");
         OutputStream servletOutputStream = response.getOutputStream();
-        this.cityService.getCityByRegionCSV(abbreviation).transferTo(servletOutputStream);
+        this.cityService.getCityByRegionCSV(abbreviation).writeTo(servletOutputStream);
         servletOutputStream.flush();
         servletOutputStream.close();
         return servletOutputStream;
