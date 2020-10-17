@@ -1,5 +1,11 @@
 package com.lucas.ibgereport.dtos.ibge;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.lucas.ibgereport.dtos.deserializers.IBGECityDeserializer;
+import lombok.Data;
+
+@Data
+@JsonDeserialize( using = IBGECityDeserializer.class )
 public class CityDTO {
     private long id;
     private String name;

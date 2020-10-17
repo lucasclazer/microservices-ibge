@@ -7,6 +7,21 @@ public class ReportDTO {
     String nomeCidade;
     String nomeFormatado;
 
+    public ReportDTO(Long idEstado, String siglaEstado, String regiaoNome, String nomeCidade) {
+        this.idEstado = idEstado;
+        this.siglaEstado = siglaEstado;
+        this.regiaoNome = regiaoNome;
+        this.nomeCidade = nomeCidade;
+        this.nomeFormatado = nomeCidade + "/" + siglaEstado;
+    }
+
+    public ReportDTO(Long idEstado, String siglaEstado, String regiaoNome, String nomeCidade, String nomeFormatado) {
+        this.idEstado = idEstado;
+        this.siglaEstado = siglaEstado;
+        this.regiaoNome = regiaoNome;
+        this.nomeCidade = nomeCidade;
+        this.nomeFormatado = nomeFormatado;
+    }
 
     public Long getIdEstado() {
         return idEstado;
@@ -41,8 +56,7 @@ public class ReportDTO {
     }
 
     public String getNomeFormatado() {
-
-        return nomeCidade+"/"+siglaEstado;
+        return nomeFormatado;
     }
 
     public void setNomeFormatado(String nomeFormatado) {
