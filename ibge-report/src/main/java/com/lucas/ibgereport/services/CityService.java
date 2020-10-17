@@ -45,7 +45,7 @@ public class CityService {
         )).collect(Collectors.toCollection(ArrayList<ReportDTO>::new));
     }
 
-    public ByteArrayOutputStream getCityByRegionCSV(String abbreviation) throws IOException {
+    public InputStream getCityByRegionCSV(String abbreviation) throws IOException {
         var cities = iibgeCity.getByRegion(abbreviation);
 
         var reportCities = cities.stream().map(c -> new ReportDTO(
@@ -63,22 +63,8 @@ public class CityService {
 
         ObjectWriter myObjectWriter = mapper.writer(schema);
         myObjectWriter.writeValue(outputStream, reportCities);
-
-//        byte[] bytes = new byte[outputStream.size()];
-//
-//        outputStream.write(bytes);
-//
-//        InputStream inputStream = new ByteArrayInputStream(bytes);
-
-//        File file = new File("cities.csv");
-//        myObjectWriter.writeValue(file, reportCities);
-
-//        InputStream inputStream = new ByteArrayInputStream(bytes);
-//        FileOutputStream fileOutputStream = new FileOutputStream("cities.csv");
-//        myObjectWriter.writeValue(fileOutputStream, reportCities);
-//        InputStream inputStream = new InputStreamReader(fileOutputStream);
-//
-        return outputStream;
+        InputStream fileInputStream = new ByteArrayInputStream(outputStream.toByteArray());
+        return fileInputStream;
     }
 
 }
