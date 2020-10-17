@@ -7,6 +7,8 @@ import com.lucas.ibgereport.dtos.ibge.CityDTO;
 import com.lucas.ibgereport.dtos.ibge.ReportDTO;
 import com.lucas.ibgereport.thirdparties.ibge.IIBGECity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayInputStream;
@@ -24,18 +26,6 @@ public class CityService {
     @Autowired
     public CityService(IIBGECity iibgeCity) {
         this.iibgeCity = iibgeCity;
-    }
-
-    public Long getCityIdByName(String cityName){
-        Collection<CityDTO> cities = this.iibgeCity.getCitiesFromBrazil();
-        var city = cities.stream().filter((value) -> {
-            return value.getName().toUpperCase().contains(cityName.toUpperCase());
-        }).findFirst();
-
-        if (city.isPresent())
-            return city.get().getId();
-
-        return 0L;
     }
 
     public Collection<ReportDTO> getCityByRegion(String abbreviation){
@@ -68,5 +58,24 @@ public class CityService {
 
         return outputStream;
     }
+
+    @Cacheable(value="citiesPerName", key="#cityName")
+    public long getCityIdByName(String cityName){
+        Collection<CityDTO> cities = this.getAllCitiesFromBrazil();
+        var city = cities.stream().filter((value) -> value.getName().toUpperCase().equals(cityName.toUpperCase())).findFirst();
+
+        if (city.isPresent()){
+            var a = city.get().getId();
+            return city.get().getId();
+        }
+
+        return 0L;
+    }
+
+    @Cacheable(value="cities", unless = "#result == null or #result.size() == 0")
+    public Collection<CityDTO> getAllCitiesFromBrazil(){
+        return this.iibgeCity.getCitiesFromBrazil();
+    }
+
 
 }

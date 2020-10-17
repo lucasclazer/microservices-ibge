@@ -1,18 +1,16 @@
 package com.lucas.ibgereport.controllers;
 
+import com.lucas.ibgereport.dtos.ibge.CityDTO;
 import com.lucas.ibgereport.dtos.ibge.ReportDTO;
 import com.lucas.ibgereport.services.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.Collection;
 
-import static org.springframework.http.MediaType.APPLICATION_OCTET_STREAM_VALUE;
 
 @RestController
 public class IBGEReportController {
@@ -36,6 +34,16 @@ public class IBGEReportController {
         servletOutputStream.flush();
         servletOutputStream.close();
         return servletOutputStream;
+    }
+
+    @GetMapping(path = "/cities/brazil")
+    public Collection<CityDTO> getCityByRegion(){
+        return cityService.getAllCitiesFromBrazil();
+    }
+
+    @GetMapping(path = "/cityIdPerName/{name}")
+    public long getIdPerName(@PathVariable(value = "name") String name){
+        return cityService.getCityIdByName(name);
     }
 
 
