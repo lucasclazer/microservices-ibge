@@ -9,9 +9,9 @@ import com.lucas.ibgereport.thirdparties.ibge.IIBGECity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
+import java.nio.channels.FileChannel;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -36,28 +36,48 @@ public class CityService {
         return 0L;
     }
 
-    public Collection<CityDTO> getCityByRegion(String abbreviation){
-        return iibgeCity.getByRegion(abbreviation);
+    public Collection<ReportDTO> getCityByRegion(String abbreviation){
+        return iibgeCity.getByRegion(abbreviation).stream().map( c -> new ReportDTO(
+                c.getIdRegion(),
+                c.getRegionAbbreviation(),
+                c.getRegionName(),
+                c.getName()
+        )).collect(Collectors.toCollection(ArrayList<ReportDTO>::new));
     }
 
     public ByteArrayOutputStream getCityByRegionCSV(String abbreviation) throws IOException {
         var cities = iibgeCity.getByRegion(abbreviation);
-        var reportCities = cities.stream().map(c -> {
-            return new ReportDTO(
-                    c.getIdRegion(),
-                    c.getRegionAbbreviation(),
-                    c.getRegionName(),
-                    c.getName()
-                    );
-        }).toArray();
+
+        var reportCities = cities.stream().map(c -> new ReportDTO(
+                c.getIdRegion(),
+                c.getRegionAbbreviation(),
+                c.getRegionName(),
+                c.getName()
+                )).toArray();
 
         CsvMapper mapper = new CsvMapper();
         CsvSchema schema = mapper.schemaFor(ReportDTO.class);
         schema = schema.withHeader().withColumnSeparator(',');
-        ObjectWriter myObjectWriter = mapper.writer(schema);
+
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+        ObjectWriter myObjectWriter = mapper.writer(schema);
         myObjectWriter.writeValue(outputStream, reportCities);
 
+//        byte[] bytes = new byte[outputStream.size()];
+//
+//        outputStream.write(bytes);
+//
+//        InputStream inputStream = new ByteArrayInputStream(bytes);
+
+//        File file = new File("cities.csv");
+//        myObjectWriter.writeValue(file, reportCities);
+
+//        InputStream inputStream = new ByteArrayInputStream(bytes);
+//        FileOutputStream fileOutputStream = new FileOutputStream("cities.csv");
+//        myObjectWriter.writeValue(fileOutputStream, reportCities);
+//        InputStream inputStream = new InputStreamReader(fileOutputStream);
+//
         return outputStream;
     }
 
