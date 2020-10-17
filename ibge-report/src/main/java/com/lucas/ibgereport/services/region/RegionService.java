@@ -1,11 +1,9 @@
-package com.lucas.ibgereport.services;
+package com.lucas.ibgereport.services.region;
 
 import com.lucas.ibgereport.dtos.ibge.RegionDTO;
-import com.lucas.ibgereport.thirdparties.ibge.IIBGECity;
 import com.lucas.ibgereport.thirdparties.ibge.IIBGERegion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Collection;
 
 @Service
@@ -20,6 +18,5 @@ public class RegionService {
     public Collection<RegionDTO> getAllRegions(){
         return this.iibgeRegion.getAllRegions();
     }
-
 
 }
