@@ -18,7 +18,7 @@ public class RegionController {
     }
 
     @GetMapping(path = "regions/brazil")
-    public Collection<RegionDTO> getAllRegionsFromBrazil(){
+    public Collection<RegionDTO> getAllRegionsFromBrazil() throws Exception {
         return this.regionService.getAllRegions();
     }
 }
