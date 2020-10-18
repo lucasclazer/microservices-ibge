@@ -1,5 +1,11 @@
 package com.lucas.ibgereport.dtos.ibge;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.lucas.ibgereport.dtos.deserializers.IBGECityDeserializer;
+import com.lucas.ibgereport.dtos.deserializers.IBGERegionDeserializer;
+import lombok.Data;
 
+@Data
+@JsonDeserialize( using = IBGERegionDeserializer.class )
 public class RegionDTO {
     private long id;
     private String abbreviation;

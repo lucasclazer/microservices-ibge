@@ -1,17 +1,17 @@
 package com.lucas.ibgereport.thirdparties.services;
 
-import com.lucas.ibgereport.dtos.ibge.CityDTO;
 import com.lucas.ibgereport.thirdparties.services.feigninterfaces.IIBGECity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.circuitbreaker.ReactiveCircuitBreaker;
 import org.springframework.stereotype.Service;
-
+import reactor.core.publisher.Mono;
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Service
 public class IBGECityService {
-    private IIBGECity iibgeCity;
-    private ReactiveCircuitBreaker circuitBreaker;
+    private final IIBGECity iibgeCity;
+    private final ReactiveCircuitBreaker circuitBreaker;
 
     @Autowired
     public IBGECityService(IIBGECity iibgeCity, ReactiveCircuitBreaker circuitBreaker) {
@@ -19,10 +19,10 @@ public class IBGECityService {
         this.circuitBreaker = circuitBreaker;
     }
 
-    public Collection<CityDTO> getCitiesFromBrazil() throws Exception {
+    public Collection getCitiesFromBrazil() throws Exception {
         var result =
-                this.circuitBreaker.run( this.iibgeCity.getCitiesFromBrazil())
-                .onErrorMap(throwable -> fallbackCitiesFromBrazil(throwable))
+                this.circuitBreaker.run(Mono
+                .just(this.iibgeCity.getCitiesFromBrazil()), this::fallbackCitiesFromBrazil)
                 .blockOptional();
 
         if(result.isPresent())
@@ -30,9 +30,9 @@ public class IBGECityService {
         else
             throw new Exception("Error on getCitiesFromBrazil!");
     }
-    public Collection<CityDTO> getByRegion(String abbreviation) throws Exception {
-        var result = this.circuitBreaker.run(this.iibgeCity.getByRegion(abbreviation))
-                .onErrorMap(throwable -> fallbackCitiesFromBrazil(throwable))
+    public Collection getByRegion(String abbreviation) throws Exception {
+        var result = this.circuitBreaker.run(Mono
+                .just(this.iibgeCity.getByRegion(abbreviation)), this::fallbackCitiesFromBrazil)
                 .blockOptional();
 
         if(result.isPresent())
@@ -41,8 +41,10 @@ public class IBGECityService {
             throw new Exception("Error on getByRegion!");
     }
 
-    public Throwable fallbackCitiesFromBrazil(Throwable throwable){
+    public Mono<Collection> fallbackCitiesFromBrazil(Throwable throwable){
         throwable.addSuppressed(new Exception("Exceeded limit of microservices requisitions!"));
-        return  throwable;
+        //Implement here alternative method for return better result for user / another service.
+        return Mono.just(new ArrayList());
     }
+
 }

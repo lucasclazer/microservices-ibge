@@ -16,17 +16,16 @@ import java.util.stream.Collectors;
 @Service
 public class CityServiceJson implements ICityService {
     private final IBGECityService ibgeCityService;
-    private final ReactiveCircuitBreaker circuitBreaker;
 
     @Autowired
     public CityServiceJson(IBGECityService iibgeCity, ReactiveCircuitBreaker circuitBreaker) {
         this.ibgeCityService = iibgeCity;
-        this.circuitBreaker = circuitBreaker;
     }
 
     @Override
     public Collection<ReportDTO> getCityByRegion(String abbreviation) throws Exception {
-         return ibgeCityService.getByRegion(abbreviation).stream().map( c -> new ReportDTO(
+        Collection<CityDTO> cities = ibgeCityService.getByRegion(abbreviation);
+        return cities.stream().map( c -> new ReportDTO(
                 c.getIdRegion(),
                 c.getRegionAbbreviation(),
                 c.getRegionName(),
@@ -43,10 +42,6 @@ public class CityServiceJson implements ICityService {
         if (city.isPresent())
             return city.get().getId();
         return 0L;
-    }
-
-    public long fallbackTeste(String cityName){
-        return -1000L;
     }
 
     @Cacheable(value="cities", unless = "#result == null or #result.size() == 0")

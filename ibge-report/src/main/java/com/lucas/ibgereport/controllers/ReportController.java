@@ -5,7 +5,6 @@ import com.lucas.ibgereport.dtos.ibge.ReportDTO;
 import com.lucas.ibgereport.services.city.CityServiceCsv;
 import com.lucas.ibgereport.services.city.CityServiceJson;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.circuitbreaker.ReactiveCircuitBreaker;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
@@ -13,12 +12,12 @@ import java.util.Collection;
 
 
 @RestController
-public class IBGEReportController {
+public class ReportController {
     private CityServiceJson cityServiceJson;
     private CityServiceCsv cityServiceCsv;
 
     @Autowired
-    public IBGEReportController(CityServiceJson cityServiceJson, CityServiceCsv cityServiceCsv, ReactiveCircuitBreaker circuitBreaker) {
+    public ReportController(CityServiceJson cityServiceJson, CityServiceCsv cityServiceCsv) {
         this.cityServiceJson = cityServiceJson;
         this.cityServiceCsv = cityServiceCsv;
     }

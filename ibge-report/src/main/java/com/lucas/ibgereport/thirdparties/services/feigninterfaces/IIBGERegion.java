@@ -10,5 +10,5 @@ import java.util.Collection;
 @FeignClient(name = "IIBGERegion", url = "https://servicodados.ibge.gov.br", configuration = FeignConfiguration.class)
 public interface IIBGERegion {
     @GetMapping(value = "api/v1/localidades/estados")
-    Mono<Collection<RegionDTO>> getAllRegions();
+    Collection<RegionDTO> getAllRegions();
 }

@@ -3,14 +3,14 @@ package com.lucas.ibgereport.services.city;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
+import com.lucas.ibgereport.dtos.ibge.CityDTO;
 import com.lucas.ibgereport.dtos.ibge.ReportDTO;
 import com.lucas.ibgereport.services.city.interfaces.ICityService;
 import com.lucas.ibgereport.thirdparties.services.IBGECityService;
-import com.lucas.ibgereport.thirdparties.services.feigninterfaces.IIBGECity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+import java.util.Collection;
 
 @Service
 public class CityServiceCsv implements ICityService {
@@ -23,7 +23,7 @@ public class CityServiceCsv implements ICityService {
 
     @Override
     public ByteArrayOutputStream getCityByRegion(String abbreviation) throws Exception {
-        var cities = ibgeCityService.getByRegion(abbreviation);
+        Collection<CityDTO> cities = ibgeCityService.getByRegion(abbreviation);
 
         var reportCities = cities.stream().map(c -> new ReportDTO(
                 c.getIdRegion(),

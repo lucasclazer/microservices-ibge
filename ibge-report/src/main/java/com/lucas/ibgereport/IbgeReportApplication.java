@@ -7,7 +7,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
-@EnableCircuitBreaker
 public class IbgeReportApplication {
 
 	public static void main(String[] args) {
