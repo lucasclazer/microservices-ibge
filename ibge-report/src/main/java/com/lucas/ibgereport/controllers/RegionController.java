@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/region/v1/")
+@RequestMapping("/api/v1/regions")
 public class RegionController {
     private RegionService regionService;
 
@@ -18,7 +18,7 @@ public class RegionController {
         this.regionService = regionService;
     }
 
-    @GetMapping(path = "regions/brazil")
+    @GetMapping(path = "brazil")
     public Collection<RegionDTO> getAllRegionsFromBrazil() throws Exception {
         return this.regionService.getAllRegions();
     }

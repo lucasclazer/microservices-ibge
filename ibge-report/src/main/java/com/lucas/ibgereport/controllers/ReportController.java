@@ -12,7 +12,7 @@ import java.util.Collection;
 
 
 @RestController
-@RequestMapping("/cities/v1/")
+@RequestMapping("/api/v1/cities")
 public class ReportController {
     private CityServiceJson cityServiceJson;
     private CityServiceCsv cityServiceCsv;
@@ -24,13 +24,13 @@ public class ReportController {
     }
 
     @CrossOrigin
-    @GetMapping(path = "/cities/{abbreviation}")
+    @GetMapping(path = "/{abbreviation}")
     public Collection<ReportDTO> getCityByRegion(@PathVariable(value = "abbreviation") String abbreviation) throws Exception {
         return cityServiceJson.getCityByRegion(abbreviation);
     }
 
     @CrossOrigin
-    @GetMapping(path = "/cities/csv/{abbreviation}")
+    @GetMapping(path = "/csv/{abbreviation}")
     public OutputStream getCityByRegionCsv(HttpServletResponse response, @PathVariable(value = "abbreviation") String abbreviation) throws Exception {
         response.setHeader("Content-Disposition","attachment; filename=cities.csv");
         OutputStream servletOutputStream = response.getOutputStream();
@@ -41,7 +41,7 @@ public class ReportController {
     }
 
     @CrossOrigin
-    @GetMapping(path = "/cities/brazil")
+    @GetMapping(path = "/brazil")
     public Collection<CityDTO> getCityByRegion() throws Exception {
         return cityServiceJson.getAllCitiesFromBrazil();
     }
