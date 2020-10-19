@@ -12,6 +12,7 @@ import java.util.Collection;
 
 
 @RestController
+@RequestMapping("/cities/v1/")
 public class ReportController {
     private CityServiceJson cityServiceJson;
     private CityServiceCsv cityServiceCsv;
