@@ -1,6 +1,6 @@
 package com.lucas.ibgereport.services.city;
 
-import com.lucas.ibgereport.dtos.ibge.CityDTO;
+import com.lucas.ibgereport.dtos.ibge.city.CityFeignDTO;
 import com.lucas.ibgereport.dtos.ibge.ReportDTO;
 import com.lucas.ibgereport.services.city.interfaces.ICityService;
 import com.lucas.ibgereport.thirdparties.services.IBGECityService;
@@ -24,7 +24,7 @@ public class CityServiceJson implements ICityService {
 
     @Override
     public Collection<ReportDTO> getCityByRegion(String abbreviation) throws Exception {
-        Collection<CityDTO> cities = ibgeCityService.getByRegion(abbreviation);
+        Collection<CityFeignDTO> cities = ibgeCityService.getByRegion(abbreviation);
         return cities.stream().map( c -> new ReportDTO(
                 c.getIdRegion(),
                 c.getRegionAbbreviation(),
@@ -45,7 +45,7 @@ public class CityServiceJson implements ICityService {
     }
 
     @Cacheable(value="cities", unless = "#result == null or #result.size() == 0")
-    public Collection<CityDTO> getAllCitiesFromBrazil() throws Exception {
+    public Collection<CityFeignDTO> getAllCitiesFromBrazil() throws Exception {
         return this.ibgeCityService.getCitiesFromBrazil();
     }
 

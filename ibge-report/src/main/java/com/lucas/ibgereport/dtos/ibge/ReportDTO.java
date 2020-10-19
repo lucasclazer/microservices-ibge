@@ -1,11 +1,19 @@
 package com.lucas.ibgereport.dtos.ibge;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.lucas.ibgereport.dtos.deserializers.IReportDeserializer;
+import lombok.Data;
+
+@Data
+@JsonDeserialize(using = IReportDeserializer.class)
 public class ReportDTO {
     Long idEstado;
     String siglaEstado;
     String regiaoNome;
     String nomeCidade;
     String nomeFormatado;
+
+    public ReportDTO(){}
 
     public ReportDTO(Long idEstado, String siglaEstado, String regiaoNome, String nomeCidade) {
         this.idEstado = idEstado;
@@ -56,7 +64,7 @@ public class ReportDTO {
     }
 
     public String getNomeFormatado() {
-        return nomeFormatado;
+        return nomeCidade + "/" + siglaEstado;
     }
 
     public void setNomeFormatado(String nomeFormatado) {

@@ -1,16 +1,15 @@
 package com.lucas.ibgereport.dtos.deserializers;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.lucas.ibgereport.dtos.ibge.CityDTO;
+import com.lucas.ibgereport.dtos.ibge.city.CityFeignDTO;
 
 import java.io.IOException;
 
-public class IBGECityDeserializer extends StdDeserializer<CityDTO>{
+public class IBGECityDeserializer extends StdDeserializer<CityFeignDTO>{
 
     protected IBGECityDeserializer() {
         super((JavaType) null);
@@ -29,11 +28,11 @@ public class IBGECityDeserializer extends StdDeserializer<CityDTO>{
     }
 
     @Override
-    public CityDTO deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+    public CityFeignDTO deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
         JsonNode nodes = p.getCodec().readTree(p);
 
 
-        return new CityDTO(
+        return new CityFeignDTO(
                 nodes.get("id").longValue(),
                 nodes.get("nome").textValue(),
                 nodes.get("microrregiao").get("mesorregiao").get("UF").get("id").longValue(),

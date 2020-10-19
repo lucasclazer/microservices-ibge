@@ -1,11 +1,15 @@
 package com.lucas.ibgereport.controllers;
 
-import com.lucas.ibgereport.dtos.ibge.CityDTO;
+import com.lucas.ibgereport.dtos.ibge.city.CityFeignDTO;
 import com.lucas.ibgereport.dtos.ibge.ReportDTO;
 import com.lucas.ibgereport.services.city.CityServiceCsv;
 import com.lucas.ibgereport.services.city.CityServiceJson;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.Collection;
@@ -37,12 +41,13 @@ public class ReportController {
         cityServiceCsv.getCityByRegion(abbreviation).writeTo(servletOutputStream);
         servletOutputStream.flush();
         servletOutputStream.close();
+
         return servletOutputStream;
     }
 
     @CrossOrigin
-    @GetMapping(path = "/brazil")
-    public Collection<CityDTO> getCityByRegion() throws Exception {
+    @GetMapping(path = "/country/brazil")
+    public Collection<CityFeignDTO> getCitiesFromCountry() throws Exception {
         return cityServiceJson.getAllCitiesFromBrazil();
     }
 

@@ -1,4 +1,4 @@
-package com.lucas.ibgereport.dtos.ibge;
+package com.lucas.ibgereport.dtos.ibge.city;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.lucas.ibgereport.dtos.deserializers.IBGECityDeserializer;
@@ -6,17 +6,17 @@ import lombok.Data;
 
 @Data
 @JsonDeserialize( using = IBGECityDeserializer.class )
-public class CityDTO {
+public class CityFeignDTO {
     private long id;
     private String name;
     private long idRegion;
     private String regionAbbreviation;
     private String regionName;
 
-    public CityDTO() {
+    public CityFeignDTO() {
     }
 
-    public CityDTO(long id, String name, long idRegion, String regionAbbreviation, String regionName) {
+    public CityFeignDTO(long id, String name, long idRegion, String regionAbbreviation, String regionName) {
         this.id = id;
         this.name = name;
         this.idRegion = idRegion;
