@@ -1,19 +1,18 @@
 package com.lucas.ibgereport.controllers;
 
-import com.lucas.ibgereport.controllers.base.AbstractTest;
+
+import com.lucas.ibgereport.controllers.base.AbstractControllerBaseTest;
 import com.lucas.ibgereport.dtos.ibge.RegionDTO;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.MediaType;
-
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
-public class RegionControllerTest extends AbstractTest {
+public class RegionControllerTest extends AbstractControllerBaseTest {
 
     @Override
     @Before

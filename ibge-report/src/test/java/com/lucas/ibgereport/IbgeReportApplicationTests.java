@@ -1,13 +1,22 @@
 package com.lucas.ibgereport;
 
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringRunner;
 
-@SpringBootTest
+
+@RunWith(SpringRunner.class)
 class IbgeReportApplicationTests {
 
+	@Before
+	public void StartTests(){
+
+	}
+
 	@Test
-	void contextLoads() {
+	void contextLoads() throws Exception {
+
 	}
 
 }

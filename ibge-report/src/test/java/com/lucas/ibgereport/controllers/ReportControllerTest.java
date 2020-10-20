@@ -1,19 +1,16 @@
 package com.lucas.ibgereport.controllers;
 
-import com.lucas.ibgereport.controllers.base.AbstractTest;
+import com.lucas.ibgereport.controllers.base.AbstractControllerBaseTest;
 import com.lucas.ibgereport.dtos.ibge.ReportDTO;
 import com.lucas.ibgereport.dtos.ibge.city.CityDTO;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
-public class ReportControllerTest extends AbstractTest {
+public class ReportControllerTest extends AbstractControllerBaseTest {
     @Override
     @Before
     public void setUp() {
