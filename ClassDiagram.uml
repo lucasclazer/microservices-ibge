@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.lucas.ibgereport.thirdparties.services.IBGECityService</OriginalElement>
+  <nodes>
+    <node x="533.5215179391315" y="1068.0">com.lucas.ibgereport.services.city.interfaces.ICityService</node>
+    <node x="237.00000000000023" y="1787.0">org.springframework.cloud.openfeign.EnableFeignClients</node>
+    <node x="1732.4902679391316" y="230.0">com.lucas.ibgereport.dtos.deserializers.IBGERegionDeserializer</node>
+    <node x="1616.209245867769" y="1438.0">com.lucas.ibgereport.services.region.RegionService</node>
+    <node x="820.8529958677688" y="1438.0">com.lucas.ibgereport.services.city.CityServiceCsv</node>
+    <node x="-197.6666666666663" y="969.3333333333339">com.lucas.ibgereport.dtos.ibge.city.CityDTO</node>
+    <node x="1325.8529958677689" y="1384.0">org.springframework.web.bind.annotation.RequestMapping</node>
+    <node x="132.2572715794313" y="946.0">com.lucas.ibgereport.dtos.ibge.ReportDTO</node>
+    <node x="2386.4902679391316" y="541.0">com.lucas.ibgereport.configurations.circuitbreaker.CircuitBreakerConfiguration</node>
+    <node x="1772.7402679391316" y="485.0">com.lucas.ibgereport.dtos.ibge.RegionDTO</node>
+    <node x="1595.7402679391316" y="820.5">com.lucas.ibgereport.thirdparties.services.feigninterfaces.IIBGERegion</node>
+    <node x="1494.1152679391316" y="1022.5">com.lucas.ibgereport.thirdparties.services.IBGERegionService</node>
+    <node x="1290.1092458677688" y="820.5">org.springframework.stereotype.Service</node>
+    <node x="546.9447715794313" y="463.0">com.lucas.ibgereport.dtos.ibge.city.CityFeignDTO</node>
+    <node x="3210.4902679391316" y="286.5">springfox.documentation.swagger2.annotations.EnableSwagger2</node>
+    <node x="659.7279958677688" y="1662.0">com.lucas.ibgereport.controllers.ReportController</node>
+    <node x="873.84375" y="809.0">com.lucas.ibgereport.thirdparties.services.feigninterfaces.IIBGECity</node>
+    <node x="979.976063393677" y="80.0">com.fasterxml.jackson.databind</node>
+    <node x="968.59375" y="530.0">com.lucas.ibgereport.thirdparties.configurations.FeignConfiguration</node>
+    <node x="2106.4902679391316" y="252.5">org.springframework.cache.annotation.EnableCaching</node>
+    <node x="3123.2402679391316" y="820.5">com.lucas.ibgereport.configurations.swagger.SwaggerConfiguration.SpringFoxConfig</node>
+    <node x="3134.4902679391316" y="574.0">com.lucas.ibgereport.configurations.swagger.SwaggerConfiguration</node>
+    <node x="-129.99999999999977" y="1776.0">org.springframework.boot.autoconfigure.SpringBootApplication</node>
+    <node x="0.0" y="230.0">com.lucas.ibgereport.dtos.deserializers.IReportDeserializer</node>
+    <node x="1539.959245867769" y="1706.5">com.lucas.ibgereport.controllers.RegionController</node>
+    <node x="2148.4902679391316" y="574.0">com.lucas.ibgereport.configurations.cache.CacheConfiguration</node>
+    <node x="1145.8529958677689" y="1461.0">org.springframework.web.bind.annotation.RestController</node>
+    <node x="837.4987906664043" y="0.0">java.io.Serializable</node>
+    <node x="2769.9630755608027" y="263.5">org.springframework.context.annotation.Configuration</node>
+    <node x="947.1048512724648" y="1011.5">com.lucas.ibgereport.thirdparties.services.IBGECityService</node>
+    <node x="364.6947715794313" y="1415.5">com.lucas.ibgereport.services.city.CityServiceJson</node>
+    <node x="371.0" y="274.5">lombok.Data</node>
+    <node x="573.0" y="230.0">com.lucas.ibgereport.dtos.deserializers.IBGECityDeserializer</node>
+    <node x="1564.7402679391316" y="453.0">org.springframework.cloud.openfeign.FeignClient</node>
+    <node x="89.00000000000023" y="1990.0">com.lucas.ibgereport.IbgeReportApplication</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.lucas.ibgereport.controllers.RegionController" target="com.lucas.ibgereport.dtos.ibge.RegionDTO">
+      <point x="110.40000000000009" y="-50.0" />
+      <point x="1788.359245867769" y="1642.0" />
+      <point x="2006.1152679391316" y="1642.0" />
+      <point x="2006.1152679391316" y="789.0" />
+      <point x="1963.4902679391316" y="789.0" />
+      <point x="81.75" y="116.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.deserializers.IBGERegionDeserializer" target="com.lucas.ibgereport.dtos.ibge.RegionDTO">
+      <point x="0.0" y="71.5" />
+      <point x="27.25" y="-116.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.RegionController" target="org.springframework.web.bind.annotation.RequestMapping">
+      <point x="-55.200000000000045" y="-50.0" />
+      <point x="1622.7592458677689" y="1622.0" />
+      <point x="1471.3529958677689" y="1622.0" />
+      <point x="48.5" y="104.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.RegionController" target="com.lucas.ibgereport.services.region.RegionService">
+      <point x="0.0" y="-50.0" />
+      <point x="-61.75" y="50.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.configurations.swagger.SwaggerConfiguration" target="org.springframework.context.annotation.Configuration">
+      <point x="-52.0" y="-27.0" />
+      <point x="3186.4902679391316" y="423.0" />
+      <point x="2955.363075560803" y="423.0" />
+      <point x="82.40000000000009" y="38.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.deserializers.IReportDeserializer" target="com.fasterxml.jackson.databind">
+      <point x="117.0" y="-71.5" />
+      <point x="292.5" y="180.0" />
+      <point x="1030.8851543027681" y="180.0" />
+      <point x="-29.09090909090901" y="15.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.feigninterfaces.IIBGECity" target="com.lucas.ibgereport.thirdparties.configurations.FeignConfiguration">
+      <point x="0.0" y="-38.5" />
+      <point x="-55.75" y="71.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.ibge.ReportDTO" target="com.lucas.ibgereport.dtos.deserializers.IReportDeserializer">
+      <point x="36.625" y="-149.0" />
+      <point x="315.3822715794313" y="926.0" />
+      <point x="265.15576380690027" y="926.0" />
+      <point x="265.15576380690027" y="433.0" />
+      <point x="292.5" y="433.0" />
+      <point x="117.0" y="71.5" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.feigninterfaces.IIBGERegion" target="org.springframework.cloud.openfeign.FeignClient">
+      <point x="0.0" y="-27.0" />
+      <point x="47.0" y="148.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.deserializers.IBGECityDeserializer" target="java.io.Serializable">
+      <point x="-122.0" y="-71.5" />
+      <point x="634.0" y="160.0" />
+      <point x="739.6465179391315" y="160.0" />
+      <point x="739.6465179391315" y="60.0" />
+      <point x="891.4987906664043" y="60.0" />
+      <point x="-18.0" y="15.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.RegionController" target="org.springframework.web.bind.annotation.RestController">
+      <point x="-110.39999999999986" y="-50.0" />
+      <point x="1567.559245867769" y="1632.0" />
+      <point x="1265.8529958677689" y="1632.0" />
+      <point x="40.0" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.city.CityServiceJson" target="org.springframework.stereotype.Service">
+      <point x="49.571428571428555" y="-72.5" />
+      <point x="587.7662001508598" y="1304.0" />
+      <point x="869.7402679391315" y="1304.0" />
+      <point x="869.7402679391315" y="916.0" />
+      <point x="1302.0092458677689" y="916.0" />
+      <point x="-47.59999999999991" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.IBGERegionService" target="com.lucas.ibgereport.dtos.ibge.RegionDTO">
+      <point x="153.0" y="-72.5" />
+      <point x="1851.1152679391316" y="926.0" />
+      <point x="1854.7495138069003" y="926.0" />
+      <point x="-27.25" y="116.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.city.CityServiceCsv" target="com.fasterxml.jackson.databind">
+      <point x="133.4375" y="-50.0" />
+      <point x="1106.7904958677686" y="1364.0" />
+      <point x="2095.9902679391316" y="1364.0" />
+      <point x="2095.9902679391316" y="190.0" />
+      <point x="1132.7033361209496" y="190.0" />
+      <point x="72.72727272727275" y="15.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.deserializers.IBGERegionDeserializer" target="java.io.Serializable">
+      <point x="117.66666666666652" y="-71.5" />
+      <point x="2026.6569346057981" y="210.0" />
+      <point x="2012.789468549128" y="210.0" />
+      <point x="2012.789468549128" y="50.0" />
+      <point x="963.4987906664043" y="50.0" />
+      <point x="54.0" y="15.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.city.CityServiceJson" target="com.lucas.ibgereport.dtos.ibge.ReportDTO">
+      <point x="-148.71428571428578" y="-72.5" />
+      <point x="389.4804858651455" y="1364.0" />
+      <point x="220.15727157943138" y="1364.0" />
+      <point x="-58.60000000000002" y="149.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.ReportController" target="com.lucas.ibgereport.dtos.ibge.ReportDTO">
+      <point x="-169.75" y="-94.5" />
+      <point x="683.9779958677688" y="1642.0" />
+      <point x="189.7521923783288" y="1642.0" />
+      <point x="189.7521923783288" y="1364.0" />
+      <point x="161.55727157943124" y="1364.0" />
+      <point x="-117.20000000000005" y="149.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.configurations.swagger.SwaggerConfiguration" target="springfox.documentation.swagger2.annotations.EnableSwagger2">
+      <point x="52.0" y="-27.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.configurations.swagger.SwaggerConfiguration.SpringFoxConfig" target="org.springframework.context.annotation.Configuration">
+      <point x="-56.0" y="-27.0" />
+      <point x="3151.2402679391316" y="789.0" />
+      <point x="3123.9902679391316" y="789.0" />
+      <point x="3123.9902679391316" y="433.0" />
+      <point x="2914.1630755608026" y="433.0" />
+      <point x="41.19999999999982" y="38.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.deserializers.IReportDeserializer" target="java.io.Serializable">
+      <point x="-117.0" y="-71.5" />
+      <point x="58.5" y="210.0" />
+      <point x="121.52917404565096" y="210.0" />
+      <point x="121.52917404565096" y="50.0" />
+      <point x="855.4987906664043" y="50.0" />
+      <point x="-54.0" y="15.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.city.CityServiceJson" target="com.lucas.ibgereport.services.city.interfaces.ICityService">
+      <point x="0.0" y="-72.5" />
+      <point x="538.1947715794313" y="1364.0" />
+      <point x="579.7715179391315" y="1364.0" />
+      <point x="-46.25" y="27.0" />
+    </edge>
+    <edge source="com.fasterxml.jackson.databind" target="com.fasterxml.jackson.databind">
+      <point x="-58.18181818181819" y="15.0" />
+      <point x="1001.7942452118589" y="140.0" />
+      <point x="949.976063393677" y="140.0" />
+      <point x="949.976063393677" y="87.5" />
+      <point x="-80.0" y="-7.5" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.deserializers.IBGECityDeserializer" target="com.lucas.ibgereport.dtos.ibge.city.CityFeignDTO">
+      <point x="0.0" y="71.5" />
+      <point x="756.0" y="433.0" />
+      <point x="733.1947715794313" y="433.0" />
+      <point x="37.25" y="-138.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.configurations.FeignConfiguration" target="org.springframework.context.annotation.Configuration">
+      <point x="74.33333333333326" y="-71.0" />
+      <point x="1154.4270833333333" y="413.0" />
+      <point x="2790.5630755608026" y="413.0" />
+      <point x="-82.40000000000009" y="38.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.ReportController" target="com.lucas.ibgereport.dtos.ibge.city.CityFeignDTO">
+      <point x="-24.25" y="-94.5" />
+      <point x="829.4779958677688" y="1612.0" />
+      <point x="746.3965179391315" y="1612.0" />
+      <point x="746.3965179391315" y="789.0" />
+      <point x="658.6947715794313" y="789.0" />
+      <point x="-37.25" y="138.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.city.CityServiceJson" target="com.lucas.ibgereport.dtos.ibge.city.CityFeignDTO">
+      <point x="-49.57142857142867" y="-72.5" />
+      <point x="488.6233430080026" y="1364.0" />
+      <point x="523.0215179391315" y="1364.0" />
+      <point x="523.0215179391315" y="789.0" />
+      <point x="584.1947715794313" y="789.0" />
+      <point x="-111.75" y="138.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.IBGERegionService" target="org.springframework.stereotype.Service">
+      <point x="-153.0" y="-72.5" />
+      <point x="1545.1152679391316" y="906.0" />
+      <point x="1397.2092458677687" y="906.0" />
+      <point x="47.59999999999991" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.ReportController" target="com.lucas.ibgereport.services.city.CityServiceJson">
+      <point x="-121.25" y="-94.5" />
+      <point x="732.4779958677688" y="1632.0" />
+      <point x="451.4447715794313" y="1632.0" />
+      <point x="-86.75" y="72.5" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.city.CityServiceJson" target="com.lucas.ibgereport.thirdparties.services.IBGECityService">
+      <point x="99.14285714285711" y="-72.5" />
+      <point x="637.3376287222884" y="1314.0" />
+      <point x="989.9798512724648" y="1314.0" />
+      <point x="-128.625" y="83.5" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.ibge.RegionDTO" target="lombok.Data">
+      <point x="-81.75" y="-116.0" />
+      <point x="1799.9902679391316" y="403.0" />
+      <point x="522.6666666666666" y="403.0" />
+      <point x="60.66666666666663" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.ReportController" target="org.springframework.web.bind.annotation.RestController">
+      <point x="121.25" y="-94.5" />
+      <point x="974.9779958677688" y="1632.0" />
+      <point x="1185.8529958677689" y="1632.0" />
+      <point x="-40.0" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.ibge.ReportDTO" target="lombok.Data">
+      <point x="109.875" y="-149.0" />
+      <point x="388.6322715794313" y="926.0" />
+      <point x="371.7800792011021" y="926.0" />
+      <point x="371.7800792011021" y="433.0" />
+      <point x="401.33333333333326" y="433.0" />
+      <point x="-60.66666666666674" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.deserializers.IReportDeserializer" target="com.lucas.ibgereport.dtos.ibge.ReportDTO">
+      <point x="0.0" y="71.5" />
+      <point x="175.5" y="423.0" />
+      <point x="205.6947715794313" y="423.0" />
+      <point x="205.6947715794313" y="926.0" />
+      <point x="242.1322715794313" y="926.0" />
+      <point x="-36.625" y="-149.0" />
+    </edge>
+    <edge source="com.fasterxml.jackson.databind" target="java.io.Serializable">
+      <point x="0.0" y="-15.0" />
+      <point x="1059.9760633936771" y="60.0" />
+      <point x="927.4987906664043" y="60.0" />
+      <point x="18.0" y="15.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.region.RegionService" target="com.lucas.ibgereport.dtos.ibge.RegionDTO">
+      <point x="92.62500000000006" y="-50.0" />
+      <point x="1832.334245867769" y="1354.0" />
+      <point x="1912.6152679391316" y="1354.0" />
+      <point x="1912.6152679391316" y="789.0" />
+      <point x="1908.9902679391316" y="789.0" />
+      <point x="27.25" y="116.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.configurations.cache.CacheConfiguration" target="org.springframework.cache.annotation.EnableCaching">
+      <point x="-54.5" y="-27.0" />
+      <point x="0.0" y="49.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.IbgeReportApplication" target="org.springframework.cloud.openfeign.EnableFeignClients">
+      <point x="54.0" y="-27.0" />
+      <point x="251.00000000000023" y="1965.0" />
+      <point x="350.5000000000002" y="1965.0" />
+      <point x="0.0" y="71.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.city.CityServiceCsv" target="org.springframework.stereotype.Service">
+      <point x="95.3125" y="-50.0" />
+      <point x="1068.6654958677686" y="1354.0" />
+      <point x="1393.103680473567" y="1354.0" />
+      <point x="1393.103680473567" y="926.0" />
+      <point x="1349.6092458677688" y="926.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.configurations.circuitbreaker.CircuitBreakerConfiguration" target="org.springframework.context.annotation.Configuration">
+      <point x="0.0" y="-60.0" />
+      <point x="2749.9902679391316" y="433.0" />
+      <point x="2872.9630755608027" y="433.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.IbgeReportApplication" target="org.springframework.boot.autoconfigure.SpringBootApplication">
+      <point x="-54.0" y="-27.0" />
+      <point x="143.00000000000023" y="1965.0" />
+      <point x="43.50000000000023" y="1965.0" />
+      <point x="0.0" y="82.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.IBGERegionService" target="com.lucas.ibgereport.thirdparties.services.feigninterfaces.IIBGERegion">
+      <point x="-51.0" y="-72.5" />
+      <point x="1647.1152679391316" y="926.0" />
+      <point x="1650.7402679391316" y="926.0" />
+      <point x="-55.0" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.ibge.city.CityFeignDTO" target="lombok.Data">
+      <point x="-111.75" y="-138.0" />
+      <point x="584.1947715794313" y="433.0" />
+      <point x="462.0" y="433.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.configurations.cache.CacheConfiguration" target="org.springframework.context.annotation.Configuration">
+      <point x="54.5" y="-27.0" />
+      <point x="2311.9902679391316" y="423.0" />
+      <point x="2831.763075560803" y="423.0" />
+      <point x="-41.19999999999982" y="38.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.IBGECityService" target="com.lucas.ibgereport.thirdparties.services.feigninterfaces.IIBGECity">
+      <point x="-114.33333333333326" y="-83.5" />
+      <point x="1004.2715179391315" y="906.0" />
+      <point x="949.09375" y="906.0" />
+      <point x="-75.25" y="38.5" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.ibge.city.CityFeignDTO" target="com.lucas.ibgereport.dtos.deserializers.IBGECityDeserializer">
+      <point x="-37.25" y="-138.0" />
+      <point x="658.6947715794313" y="433.0" />
+      <point x="634.0" y="433.0" />
+      <point x="-122.0" y="71.5" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.ibge.RegionDTO" target="com.lucas.ibgereport.dtos.deserializers.IBGERegionDeserializer">
+      <point x="-27.25" y="-116.0" />
+      <point x="1854.4902679391316" y="393.0" />
+      <point x="1791.3236012724647" y="393.0" />
+      <point x="-117.66666666666674" y="71.5" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.IBGECityService" target="org.springframework.stereotype.Service">
+      <point x="114.33333333333326" y="-83.5" />
+      <point x="1232.9381846057981" y="926.0" />
+      <point x="1325.8092458677688" y="926.0" />
+      <point x="-23.799999999999955" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.feigninterfaces.IIBGECity" target="com.lucas.ibgereport.dtos.ibge.city.CityFeignDTO">
+      <point x="-100.33333333333326" y="-38.5" />
+      <point x="924.0104166666667" y="769.0" />
+      <point x="807.6947715794313" y="769.0" />
+      <point x="111.75" y="138.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.city.CityServiceCsv" target="com.lucas.ibgereport.services.city.interfaces.ICityService">
+      <point x="-57.1875" y="-50.0" />
+      <point x="916.1654958677688" y="1274.0" />
+      <point x="672.2715179391315" y="1274.0" />
+      <point x="46.25" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.ReportController" target="com.lucas.ibgereport.services.city.CityServiceCsv">
+      <point x="24.25" y="-94.5" />
+      <point x="877.9779958677688" y="1642.0" />
+      <point x="897.1029958677688" y="1642.0" />
+      <point x="-76.25" y="50.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.deserializers.IBGECityDeserializer" target="com.fasterxml.jackson.databind">
+      <point x="122.0" y="-71.5" />
+      <point x="878.0" y="200.0" />
+      <point x="1059.9760633936771" y="200.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.city.CityServiceCsv" target="com.lucas.ibgereport.dtos.ibge.city.CityFeignDTO">
+      <point x="-19.0625" y="-50.0" />
+      <point x="954.2904958677688" y="1264.0" />
+      <point x="823.8652679391315" y="1264.0" />
+      <point x="823.8652679391315" y="779.0" />
+      <point x="733.1947715794313" y="779.0" />
+      <point x="37.25" y="138.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.city.CityServiceCsv" target="com.lucas.ibgereport.dtos.ibge.ReportDTO">
+      <point x="-133.4375" y="-50.0" />
+      <point x="839.9154958677688" y="1294.0" />
+      <point x="337.3572715794313" y="1294.0" />
+      <point x="58.60000000000002" y="149.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.region.RegionService" target="com.lucas.ibgereport.thirdparties.services.IBGERegionService">
+      <point x="-30.875" y="-50.0" />
+      <point x="1708.834245867769" y="1344.0" />
+      <point x="1596.1152679391316" y="1344.0" />
+      <point x="-102.0" y="72.5" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.city.CityServiceCsv" target="com.lucas.ibgereport.thirdparties.services.IBGECityService">
+      <point x="19.0625" y="-50.0" />
+      <point x="992.4154958677688" y="1334.0" />
+      <point x="1161.4798512724647" y="1334.0" />
+      <point x="42.875" y="83.5" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.feigninterfaces.IIBGECity" target="org.springframework.cloud.openfeign.FeignClient">
+      <point x="100.33333333333326" y="-38.5" />
+      <point x="1124.6770833333333" y="789.0" />
+      <point x="1611.7402679391316" y="789.0" />
+      <point x="-47.0" y="148.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.region.RegionService" target="org.springframework.stereotype.Service">
+      <point x="-92.625" y="-50.0" />
+      <point x="1647.084245867769" y="1354.0" />
+      <point x="1483.6152679391316" y="1354.0" />
+      <point x="1483.6152679391316" y="916.0" />
+      <point x="1373.4092458677687" y="916.0" />
+      <point x="23.799999999999955" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.configurations.swagger.SwaggerConfiguration.SpringFoxConfig" target="com.lucas.ibgereport.configurations.swagger.SwaggerConfiguration">
+      <point x="0.0" y="-27.0" />
+      <point x="3207.2402679391316" y="789.0" />
+      <point x="3186.4902679391316" y="789.0" />
+      <point x="-52.0" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.configurations.FeignConfiguration" target="com.fasterxml.jackson.databind">
+      <point x="-74.33333333333326" y="-71.0" />
+      <point x="1005.7604166666667" y="433.0" />
+      <point x="968.875" y="433.0" />
+      <point x="968.875" y="210.0" />
+      <point x="1074.5215179391316" y="210.0" />
+      <point x="14.545454545454504" y="15.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.feigninterfaces.IIBGERegion" target="com.lucas.ibgereport.dtos.ibge.RegionDTO">
+      <point x="73.33333333333326" y="-27.0" />
+      <point x="1779.0736012724647" y="789.0" />
+      <point x="1799.9902679391316" y="789.0" />
+      <point x="-81.75" y="116.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.feigninterfaces.IIBGERegion" target="com.lucas.ibgereport.thirdparties.configurations.FeignConfiguration">
+      <point x="-73.33333333333326" y="-27.0" />
+      <point x="1632.4069346057981" y="779.0" />
+      <point x="1135.84375" y="779.0" />
+      <point x="55.75" y="71.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.dtos.deserializers.IBGERegionDeserializer" target="com.fasterxml.jackson.databind">
+      <point x="0.0" y="-71.5" />
+      <point x="1908.9902679391316" y="200.0" />
+      <point x="1118.1578815754951" y="200.0" />
+      <point x="58.181818181818244" y="15.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.ReportController" target="org.springframework.web.bind.annotation.RequestMapping">
+      <point x="169.75" y="-94.5" />
+      <point x="1023.4779958677688" y="1642.0" />
+      <point x="1374.3529958677689" y="1642.0" />
+      <point x="-48.5" y="104.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.40000000000000013" x="1475.9999999999995" y="816.2539682539671" />
+  <SelectedNodes>
+    <node>org.springframework.context.annotation.Configuration</node>
+    <node>com.lucas.ibgereport.configurations.swagger.SwaggerConfiguration.SpringFoxConfig</node>
+    <node>com.lucas.ibgereport.configurations.swagger.SwaggerConfiguration</node>
+    <node>springfox.documentation.swagger2.annotations.EnableSwagger2</node>
+    <node>com.lucas.ibgereport.configurations.cache.CacheConfiguration</node>
+    <node>com.lucas.ibgereport.configurations.circuitbreaker.CircuitBreakerConfiguration</node>
+    <node>org.springframework.cache.annotation.EnableCaching</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

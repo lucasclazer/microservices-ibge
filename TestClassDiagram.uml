@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.lucas.ibgereport.thirdparties.services.IBGERegionServiceTest</OriginalElement>
+  <nodes>
+    <node x="1235.7604166666667" y="327.0">org.springframework.test.context.web.WebAppConfiguration</node>
+    <node x="1815.0" y="720.0">com.lucas.ibgereport.thirdparties.feignclients.IBGERegionClientTest</node>
+    <node x="697.21875" y="0.0">org.springframework.boot.test.context.SpringBootTest.WebEnvironment</node>
+    <node x="0.0" y="902.0">com.lucas.ibgereport.controllers.ReportControllerTest</node>
+    <node x="962.25" y="327.0">org.junit.runner.RunWith</node>
+    <node x="857.0" y="709.0">com.lucas.ibgereport.thirdparties.feignclients.IBGECityClientTest</node>
+    <node x="1580.0" y="709.0">com.lucas.ibgereport.thirdparties.services.IBGECityServiceTest</node>
+    <node x="688.71875" y="283.0">org.springframework.boot.test.context.SpringBootTest</node>
+    <node x="390.0" y="687.0">com.lucas.ibgereport.services.CityServiceJsonTest</node>
+    <node x="1336.0" y="698.0">com.lucas.ibgereport.services.CityServiceCsvTest</node>
+    <node x="640.0" y="709.0">com.lucas.ibgereport.services.RegionServiceTest</node>
+    <node x="66.0" y="665.0">com.lucas.ibgereport.controllers.base.AbstractControllerBaseTest</node>
+    <node x="1069.0" y="720.0">com.lucas.ibgereport.thirdparties.services.IBGERegionServiceTest</node>
+    <node x="228.0" y="924.0">com.lucas.ibgereport.controllers.RegionControllerTest</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.lucas.ibgereport.services.CityServiceCsvTest" target="org.junit.runner.RunWith">
+      <point x="0.0" y="-60.5" />
+      <point x="1448.0" y="515.0" />
+      <point x="1114.1875" y="515.0" />
+      <point x="41.4375" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.base.AbstractControllerBaseTest" target="org.springframework.boot.test.context.SpringBootTest">
+      <point x="-101.33333333333331" y="-93.5" />
+      <point x="116.66666666666674" y="535.0" />
+      <point x="703.84375" y="535.0" />
+      <point x="-105.875" y="71.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.feignclients.IBGERegionClientTest" target="org.springframework.test.context.web.WebAppConfiguration">
+      <point x="69.33333333333337" y="-38.5" />
+      <point x="1988.3333333333333" y="445.0" />
+      <point x="1423.2604166666667" y="445.0" />
+      <point x="87.5" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.IBGERegionServiceTest" target="org.springframework.test.context.web.WebAppConfiguration">
+      <point x="82.33333333333326" y="-38.5" />
+      <point x="1274.8333333333333" y="645.0" />
+      <point x="1348.2604166666667" y="645.0" />
+      <point x="12.5" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.base.AbstractControllerBaseTest" target="org.junit.runner.RunWith">
+      <point x="0.0" y="-93.5" />
+      <point x="218.0" y="565.0" />
+      <point x="976.0625" y="565.0" />
+      <point x="-96.6875" y="27.0" />
+    </edge>
+    <edge source="org.springframework.boot.test.context.SpringBootTest" target="org.springframework.boot.test.context.SpringBootTest.WebEnvironment">
+      <point x="-60.5" y="-71.0" />
+      <point x="749.21875" y="258.0" />
+      <point x="753.46875" y="258.0" />
+      <point x="-56.25" y="116.5" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.feignclients.IBGECityClientTest" target="org.springframework.test.context.web.WebAppConfiguration">
+      <point x="64.0" y="-49.5" />
+      <point x="1017.0" y="635.0" />
+      <point x="1323.2604166666667" y="635.0" />
+      <point x="-12.5" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.IBGECityServiceTest" target="org.junit.runner.RunWith">
+      <point x="0.0" y="-49.5" />
+      <point x="1687.5" y="485.0" />
+      <point x="1141.8125" y="485.0" />
+      <point x="69.0625" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.feignclients.IBGECityClientTest" target="org.springframework.boot.test.context.SpringBootTest">
+      <point x="-64.0" y="-49.5" />
+      <point x="889.0" y="555.0" />
+      <point x="794.59375" y="555.0" />
+      <point x="-15.125" y="71.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.IBGERegionServiceTest" target="org.springframework.boot.test.context.SpringBootTest">
+      <point x="-82.33333333333326" y="-38.5" />
+      <point x="1110.1666666666667" y="545.0" />
+      <point x="824.84375" y="545.0" />
+      <point x="15.125" y="71.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.IBGECityServiceTest" target="org.springframework.boot.test.context.SpringBootTest">
+      <point x="-71.66666666666669" y="-49.5" />
+      <point x="1615.8333333333333" y="495.0" />
+      <point x="885.34375" y="495.0" />
+      <point x="75.625" y="71.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.CityServiceJsonTest" target="org.junit.runner.RunWith">
+      <point x="0.0" y="-71.5" />
+      <point x="505.0" y="575.0" />
+      <point x="1003.6875" y="575.0" />
+      <point x="-69.0625" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.RegionServiceTest" target="org.junit.runner.RunWith">
+      <point x="0.0" y="-49.5" />
+      <point x="738.5" y="585.0" />
+      <point x="1031.3125" y="585.0" />
+      <point x="-41.4375" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.CityServiceJsonTest" target="org.springframework.boot.test.context.SpringBootTest">
+      <point x="-76.66666666666674" y="-71.5" />
+      <point x="428.33333333333326" y="545.0" />
+      <point x="734.09375" y="545.0" />
+      <point x="-75.625" y="71.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.RegionServiceTest" target="org.springframework.boot.test.context.SpringBootTest">
+      <point x="-65.66666666666674" y="-49.5" />
+      <point x="672.8333333333333" y="555.0" />
+      <point x="764.34375" y="555.0" />
+      <point x="-45.375" y="71.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.IBGECityServiceTest" target="org.springframework.test.context.web.WebAppConfiguration">
+      <point x="71.66666666666663" y="-49.5" />
+      <point x="1759.1666666666665" y="475.0" />
+      <point x="1398.2604166666667" y="475.0" />
+      <point x="62.5" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.RegionControllerTest" target="com.lucas.ibgereport.controllers.base.AbstractControllerBaseTest">
+      <point x="0.0" y="-38.0" />
+      <point x="332.0" y="877.0" />
+      <point x="294.0" y="877.0" />
+      <point x="76.0" y="93.5" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.services.IBGERegionServiceTest" target="org.junit.runner.RunWith">
+      <point x="0.0" y="-38.5" />
+      <point x="1192.5" y="535.0" />
+      <point x="1086.5625" y="535.0" />
+      <point x="13.8125" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.feignclients.IBGECityClientTest" target="org.junit.runner.RunWith">
+      <point x="0.0" y="-49.5" />
+      <point x="953.0" y="595.0" />
+      <point x="1058.9375" y="595.0" />
+      <point x="-13.8125" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.CityServiceCsvTest" target="org.springframework.boot.test.context.SpringBootTest">
+      <point x="-74.66666666666674" y="-60.5" />
+      <point x="1373.3333333333333" y="525.0" />
+      <point x="855.09375" y="525.0" />
+      <point x="45.375" y="71.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.feignclients.IBGERegionClientTest" target="org.springframework.boot.test.context.SpringBootTest">
+      <point x="-69.33333333333326" y="-38.5" />
+      <point x="1849.6666666666667" y="465.0" />
+      <point x="915.59375" y="465.0" />
+      <point x="105.875" y="71.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.base.AbstractControllerBaseTest" target="org.springframework.test.context.web.WebAppConfiguration">
+      <point x="101.33333333333331" y="-93.5" />
+      <point x="319.33333333333326" y="605.0" />
+      <point x="1248.2604166666667" y="605.0" />
+      <point x="-87.5" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.CityServiceCsvTest" target="org.springframework.test.context.web.WebAppConfiguration">
+      <point x="74.66666666666674" y="-60.5" />
+      <point x="1522.6666666666667" y="505.0" />
+      <point x="1373.2604166666667" y="505.0" />
+      <point x="37.5" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.thirdparties.feignclients.IBGERegionClientTest" target="org.junit.runner.RunWith">
+      <point x="0.0" y="-38.5" />
+      <point x="1919.0" y="455.0" />
+      <point x="1169.4375" y="455.0" />
+      <point x="96.6875" y="27.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.controllers.ReportControllerTest" target="com.lucas.ibgereport.controllers.base.AbstractControllerBaseTest">
+      <point x="0.0" y="-60.0" />
+      <point x="104.0" y="877.0" />
+      <point x="142.0" y="877.0" />
+      <point x="-76.0" y="93.5" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.RegionServiceTest" target="org.springframework.test.context.web.WebAppConfiguration">
+      <point x="65.66666666666674" y="-49.5" />
+      <point x="804.1666666666667" y="625.0" />
+      <point x="1298.2604166666667" y="625.0" />
+      <point x="-37.5" y="27.0" />
+    </edge>
+    <edge source="org.springframework.boot.test.context.SpringBootTest.WebEnvironment" target="org.springframework.boot.test.context.SpringBootTest">
+      <point x="56.25" y="116.5" />
+      <point x="865.96875" y="258.0" />
+      <point x="870.21875" y="258.0" />
+      <point x="60.5" y="-71.0" />
+    </edge>
+    <edge source="com.lucas.ibgereport.services.CityServiceJsonTest" target="org.springframework.test.context.web.WebAppConfiguration">
+      <point x="76.66666666666674" y="-71.5" />
+      <point x="581.6666666666667" y="615.0" />
+      <point x="1273.2604166666667" y="615.0" />
+      <point x="-62.5" y="27.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5079030558482613" x="944.2099873407002" y="404.48871489348903" />
+  <SelectedNodes>
+    <node>com.lucas.ibgereport.thirdparties.services.IBGERegionServiceTest</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
